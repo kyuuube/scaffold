@@ -1,0 +1,15 @@
+{
+  "name": "scaffold",
+  "version": "1.0.0",
+  "description": "",
+  "main": "genApiFile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen:API": "node genApiFile.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "art-template": "^4.13.2"
+  }
+}

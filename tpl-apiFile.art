@@ -1,0 +1,12 @@
+import request from '@/js/request';
+<% for(var i = 0; i < list.length; i++){ %>
+    <% if (list[i].summary) { %>
+    // <%= list[i].summary %>
+    <% } %>
+    <% if (list[i].method == 'get' || list[i].method == 'delete') { %>
+    export const <%= list[i].operationId %> = pararms => request.<%= list[i].method %>(`<%= list[i].url %>`, { params });
+    <% } %>
+    <% if (list[i].method == 'post' || list[i].method == 'put') { %>
+    export const <%= list[i].operationId %> = data => request.<%= list[i].method %>(`<%= list[i].url %>`, data);
+    <% } %>
+<% } %>
