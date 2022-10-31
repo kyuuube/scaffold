@@ -1,7 +1,7 @@
 const http = require('http');
 const template = require('art-template');
 const fs = require('fs');
-const url = 'http://domain/service-name/v2/api-docs';
+const url = 'https://rosetta-latte.art/swagger/v2/api-docs';
 
 let basePath = '';
 let paths = null;

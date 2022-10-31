@@ -5,7 +5,8 @@
   "main": "genApiFile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gen:API": "node genApiFile.js"
+    "gen:API": "node genApiFile.js",
+    "gen:API:Ts": "node genApiTSFile.js"
   },
   "author": "",
   "license": "MIT",
