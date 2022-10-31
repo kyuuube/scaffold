@@ -1,7 +1,7 @@
 const http = require('http');
 const template = require('art-template');
 const fs = require('fs');
-const url = 'http://domain/service-name/v2/api-docs';
+const url = 'http://kctest.rkpcn.com/cservice/v2/api-docs';
 
 let basePath = '';
 let paths = null;
@@ -28,11 +28,11 @@ let pathList = [];
                 console.log(Object.prototype.toString.call(paths) === '[Object Object]');
             }
             pathList = Object.keys(paths).map(key => ({...paramsFlat(paths[key]), url: basePath + key}))
-            fileData = template(__dirname + '/tpl-apiFile.art', {
+            fileData = template(__dirname + '/template/tpl-apiFile.art', {
                 list: pathList
             });
             fileData = replaceBlank(fileData)
-            fs.writeFile(__dirname + `/template/${basePath}Api.js`, fileData, function (err) {
+            fs.writeFile(__dirname + `/dist/${basePath}Api.js`, fileData, function (err) {
                 if (err) return console.log(err);
                 console.log('finish');})
         });
